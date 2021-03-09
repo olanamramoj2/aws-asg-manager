@@ -52,4 +52,7 @@ git remote set-url origin <ssh url>
 ```
 <path to this repo>/venv/bin/python <path to this repo>/delete_snapshot.py
 ```
-2. 
+3. you should be able to execute instance refresh
+```
+<path to this repo>/venv/bin/python <path to this repo>/asg_instance_refresh.py
+```
