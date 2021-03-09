@@ -1,7 +1,7 @@
 ### Requirements
 
 1. Machine should have python3 installed (suggested version is 3.7)
-2. Create ~/.aws/config. Provide valid configuration values. Get aws_access_key_id & aws_secret_access_key from the admin
+2. Create ~/.aws/config or assign InstanceProfile. Provide valid configuration values. Get aws_access_key_id & aws_secret_access_key from the admin
 ### Installation
 1. Setup python virtual environment inside project directory
 ```
