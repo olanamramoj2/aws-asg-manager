@@ -3,7 +3,7 @@ import boto3
 
 
 class AutoScalingConfigCreator(object):
-    def __init__(self, image, config):
+    def __init__(self, image="", config):
         self._config = config
         self._autoscale_client = boto3.client('autoscaling')
         self._image = image
@@ -47,6 +47,16 @@ class AutoScalingConfigCreator(object):
             LaunchConfigurationName=self._launch_config_name,
             MinSize=int(self._config.MIN_ASG_SIZE),
             MaxSize=int(self._config.MAX_ASG_SIZE)
+        )
+
+    def instance_refresh(self):
+        response = self._autoscale_client.start_instance_refresh(
+            AutoScalingGroupName=self._config.ASG_NAME,
+            Strategy='Rolling',
+            Preferences={
+                'MinHealthyPercentage': 50,
+                'InstanceWarmup': 0
+            }
         )
 
     def _get_all_launch_config(self):
