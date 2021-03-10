@@ -113,9 +113,7 @@ def delete_instance_snapshots(instance_id):
 def get_all_intance_snapshots(instance_id):
     print 'Get all snapshots for {0}'.format(instance_id)
     return _AWS_connection.get_all_snapshots(filters={'description':'Created by CreateImage(' + instance_id + ') for '
-                                                                                                               'ami-* '
-                                                                                                               'from '
-                                                                                                               'vol-*'})
+                                                                                                               'ami-*'})
 
 
 def main():

@@ -18,7 +18,7 @@ class SnapshotsHandler(object):
                     'Name': 'description',
                     'Values': [
                         'Created by CreateImage(' +
-                        self._config.INSTANCE_ID + ') for ami-* from vol-*'
+                        self._config.INSTANCE_ID + ') for ami-*'
                     ]
                 }
             ]
