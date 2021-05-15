@@ -5,7 +5,7 @@ import boto3
 class AutoScalingConfigCreator(object):
     def __init__(self, image="", config):
         self._config = config
-        self._autoscale_client = boto3.client('autoscaling')
+        self._autoscale_client = boto3.client('autoscaling', region_name=self._config.AWS_REGION)
         self._image = image
         self._launch_config_name = self._config.LAUNCH_CONFIG_NAME + '-' + \
             str(time.strftime('%Y%m%d_%H%M%S'))

@@ -9,7 +9,7 @@ utc = pytz.UTC
 class Ec2ImageCreator(object):
     def __init__(self, config):
         self._config = config
-        self.ec2 = boto3.resource('ec2')
+        self.ec2 = boto3.resource('ec2', region_name=self._config.AWS_REGION)
 
     def create_image(self):
         images = list(self._get_all_images())

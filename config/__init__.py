@@ -4,6 +4,7 @@ import os
 
 load_dotenv(verbose=True)
 
+AWS_REGION = os.getenv('AWS_REGION')
 INSTANCE_ID = os.getenv('INSTANCE_ID')
 AMI_NAME = os.getenv('AMI_NAME')
 INSTANCE_TYPE = os.getenv('INSTANCE_TYPE')

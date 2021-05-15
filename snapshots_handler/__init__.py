@@ -9,7 +9,7 @@ utc = pytz.UTC
 class SnapshotsHandler(object):
     def __init__(self, config):
         self._config = config
-        self.ec2 = boto3.resource('ec2')
+        self.ec2 = boto3.resource('ec2', region_name=self._config.AWS_REGION)
 
     def _get_all_snapshots(self):
         return self.ec2.snapshots.filter(
